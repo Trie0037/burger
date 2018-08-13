@@ -2,6 +2,10 @@ body {
     background: lightgrey;
 }
 
+.btn{
+    float: right;
+}
+
 /* div {
     border: 1px solid red;
 } */
