@@ -2,24 +2,31 @@
 // Dependencies
 // ===========================================================
 const express = require("express");
-const path = require('path');
-const bodyParser = require('body-parser')
-
+//const path = require('path');
+const bodyParser = require('body-parser');
+//var connection = require("./config/connection.js");
+//var handleBars = require("express-handlebars");
+const PORT = process.env.PORT || 8080;
 const app = express();
-const PORT = process.env.PORT || 3306;
+
 
 // Sets up the Express app to handle data parsing
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 //express.static Used to serve images, css files, and javascript files
-app.use(express.static('./app/public'))
+var exphbs = require("express-handlebars");
 
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-require("./app/routing/apiRoutes.js")(app);
-require("./app/routing/htmlRoutes.js")(app); //NEEDS TO BE LAST because of the wildcard
+var routes = require("./controllers/burgers_controller.js");
+app.use(routes);
+//require("./controllers/burgers_controller.js")(app);
+//require("./app/routing/htmlRoutes.js")(app); //NEEDS TO BE LAST because of the wildcard
 
 // Listener
 // ===========================================================
 app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+    console.log("Server listening on: http://localhost:" + PORT);
 });
