@@ -9,7 +9,7 @@ $(function () {
             burger_name: $("#bu").val().trim()
         };
         if (!newBurger.burger_name) {
-            alert("Hello Burger-lover!");
+            alert("Add a burger Burger-lover!");
         }
         else{
         // Send the POST request.
@@ -26,7 +26,6 @@ $(function () {
     }
     });
 
-
     $(".devourBurger").on("click", function (event) {
     event.preventDefault();
     var id = $(this).data("id");
@@ -35,8 +34,6 @@ $(function () {
 
     var burgerDevoured = true;
          
-
-
         // Send the PUT request.
         $.ajax("/api/burgers/" + id, {
             type: "PUT",

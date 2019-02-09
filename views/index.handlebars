@@ -1,20 +1,23 @@
-<h1>Burgers!</h1>
-<div class="container">
-  <div class="jumbotron">
-    <h1 id="pageTitle">Eat-Da-Burger</h1>
-    <img id="mainImg" src="assets/css/images/burger.png">
+
+
+<h1 class="cheeseburger" style="text-align: center;">Burger-Time!</h1>
+<div class="container" style="background-color: brown; padding: 25px; margin-bottom: 50px;">
+  <div class="jumbotron" style="background-color: rgb(240, 211, 49);padding: 15px;">
+    <h1 id="pageTitle" style="font-size: 20px;">Eat-Da-Burger</h1>
+    <img id="mainImg" src="assets/css/images/burger.png" style="width: 100%;">
+  </div>
     <hr>
     <form class="create-form">
       <div class="row">
         <div class="col-md-6">
-          <h2>Add a Burger</h2>
+          <h2>Add a Burger +</h2>
 
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label for="bu">Burger Name:</label>
-            <input type="text" id="bu" name="name">
-            <button type="submit">Add Burger</button>
+            <input type="text" id="bu" name="name" style="background-color: rgb(214, 110, 5);">
+            <button type="submit" style="background-color:rgb(240, 211, 49);">Add Burger</button>
           </div>
 
         </div>
@@ -23,13 +26,13 @@
     <hr>
     <div class="row">
       <div class="col-md-6">
-        <h2 style="text-align: center">Burgers to Eat</h2>
+        <h2 style="text-align: center">- Burgers to Eat:</h2>
 
         {{#each burgers}} {{#unless devoured}}
 
         <p class="burger">
           {{this.id}}. {{this.burger_name}}
-          <button data-id="{{this.id}}" class="devourBurger btn btn-danger">Devour!</button>
+          <button data-id="{{this.id}}" class="devourBurger btn btn-danger" style="background-color: rgb(214, 110, 5);">Devour!</button>
         </p>
         <hr>
 
@@ -37,7 +40,7 @@
        
       </div>
       <div class="col-md-6">
-        <h2 style="text-align: center">Burgers Devoured</h2>
+        <h2 style="text-align: center">Burgers Devoured:</h2>
 
 
          {{#each burgers}} {{#if devoured}}
@@ -54,3 +57,4 @@
     </div>
   </div>
 </div>
+

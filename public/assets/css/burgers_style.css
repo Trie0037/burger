@@ -1,11 +1,9 @@
 body {
-    background: lightgrey;
+    background: red;
 }
 
 .btn{
     float: right;
-}
+    background-color: gold;
+} 
 
-/* div {
-    border: 1px solid red;
-} */
