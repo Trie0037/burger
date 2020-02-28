@@ -1,9 +1,8 @@
 body {
-    background: red;
+  background: red;
 }
 
-.btn{
-    float: right;
-    background-color: gold;
-} 
-
+.btn {
+  float: right;
+  background-color: gold;
+}

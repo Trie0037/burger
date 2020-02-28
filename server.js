@@ -2,7 +2,7 @@
 // ===========================================================
 const express = require("express");
 //const path = require('path');
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 8080;
 const app = express();
 // Sets up the Express app to handle data parsing
@@ -19,11 +19,10 @@ app.use(routes);
 // Listener
 // ===========================================================
 app.listen(PORT, function() {
-    console.log("Server listening on: http://localhost:" + PORT);
+  console.log("Server listening on: http://localhost:" + PORT);
 });
 
 var https = require("https");
 setInterval(function() {
-    https.get("https://eatdaburger187.herokuapp.com/");
+  https.get("https://eatdaburger187.herokuapp.com/");
 }, 300000); // ping app every 5 minutes (300000)
-
